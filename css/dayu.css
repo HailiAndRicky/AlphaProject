@@ -95,7 +95,8 @@ banner>ul a:hover{
     height:735px;
     color: #a1a1a1;
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 #banner-bg>p{
     font-size:0.5em;
