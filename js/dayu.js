@@ -1,0 +1,32 @@
+var app=angular.module('dayu',['ng','ngRoute']);
+app.config(function($routeProvider){
+    $routeProvider
+        .when('/Frontpage',{
+            templateUrl:'tpl/frontpage.html',
+            controller:''
+        })
+        .when('/Login',{
+            templateUrl:'tpl/login.html',
+            controller:''
+        })
+        .when('/Registe',{
+            templateUrl:'tpl/registe.html',
+            controller:''
+        })
+        .when('/Usercenter',{
+            templateUrl:'tpl/usercenter.html',
+            controller:''
+        })
+        .when('/List',{
+            templateUrl:'tpl/list.html',
+            controller:''
+        })
+        .otherwise({
+            redirectTo:'/Frontpage'
+        });
+});
+app.controller('jump',['$scope','$location',function($scope,$location){
+    $scope.jump=function(resPath){
+        $location.path(resPath);
+    }
+}])
