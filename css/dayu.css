@@ -3,6 +3,12 @@ body{
     color: rgba(0, 0, 0, 0.6);
     font:20px poppin,'PingFang SC',Tahoma,Arial;
 }
+body:hover #banner-bg .myControls button.left{
+    left: 0;
+}
+body:hover #banner-bg .myControls button.right{
+    right: 0;
+}
 a{
     color: rgba(0, 0, 0, 0.71);
 }
@@ -97,13 +103,87 @@ banner>ul a:hover{
     display:flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    font-family: "张海山锐线体简",poppin,"PingFang SC",Tahoma,Arial,"微软雅黑",sans-serif;
 }
 #banner-bg>p{
-    font-size:0.5em;
-    padding:20px 0;
+    padding-top:80px;
+    display: flex;
+    align-items: center;
+}
+#banner-bg>p>i{
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(255,255,255,0.3);
 }
 #banner-bg>p>span{
-    font-size: 40px;
+    font-size: 2.3em;
     color: #fff;
-    margin:0 60px;
+    margin:0 80px;
+}
+#banner-bg>ul{
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+}
+#banner-bg>ul>li{
+    color: #999;
+    margin: 0 30px;
+    font-size: 0.9em;
+}
+#banner-bg>ul>li:hover{
+    color: #fff;
+}
+#carousel-example-generic .item ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#carousel-example-generic .item ul li{
+    width: 25%;
+    height: 130px;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+#carousel-example-generic .item ul li:hover{
+    background-color: #8DA3BA;
+}
+#carousel-example-generic .item ul li span{
+    color: #ccc;
+    font-size: 0.9em;
+    padding-top:5px ;
+}
+#banner-bg .myControls button{
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    bottom: 40%;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    border-radius: 0;
+}
+#banner-bg .myControls button:hover{
+    background-color: #8DA3BA;
+    width: 65px;
+}
+#banner-bg .myControls button:focus{
+    outline: none;
+}
+#banner-bg .myControls button.left{
+    left: -60px;
+    transition-property: left,width,background-color;
+    transition:.3s linear;
+}
+#banner-bg .myControls button{
+    right: -60px;
+    transition-property: right,width,background-color;
+    transition:.4s linear;
 }

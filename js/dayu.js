@@ -1,9 +1,9 @@
 var app=angular.module('dayu',['ng','ngRoute']);
-app.config(function($routeProvider){
+app.config(['$routeProvider',function($routeProvider){
     $routeProvider
         .when('/Frontpage',{
             templateUrl:'tpl/frontpage.html',
-            controller:''
+            controller:'frontpage'
         })
         .when('/Login',{
             templateUrl:'tpl/login.html',
@@ -24,9 +24,19 @@ app.config(function($routeProvider){
         .otherwise({
             redirectTo:'/Frontpage'
         });
-});
+}]);
 app.controller('jump',['$scope','$location',function($scope,$location){
     $scope.jump=function(resPath){
         $location.path(resPath);
-    }
-}])
+    };
+}]);
+app.controller('frontpage',['$scope',function ($scope) {
+  // 循环轮播到上一个项目
+  $scope.leftSlide=function(){
+    $("#carousel-example-generic").carousel('prev');
+  };
+  // 循环轮播到下一个项目
+  $scope.rightSlide=function(){
+    $("#carousel-example-generic").carousel('next');
+  };
+}]);
