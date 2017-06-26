@@ -30,7 +30,14 @@ app.controller('jump',['$scope','$location',function($scope,$location){
         $location.path(resPath);
     };
 }]);
-app.controller('frontpage',['$scope',function ($scope) {
+app.controller('frontpage',['$scope','$timeout',function ($scope,$timeout) {
+  var firstImg=$('#carousel-example-generic .item img:first-child');
+  var resizeImgH=function () {
+    var imgWidth=firstImg.css("width");
+    $("#carousel-example-generic .item img").css("height",imgWidth);
+  };
+  $timeout(resizeImgH,10);
+  $(window).resize(resizeImgH);
   // 循环轮播到上一个项目
   $scope.leftSlide=function(){
     $("#carousel-example-generic").carousel('prev');
