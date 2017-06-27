@@ -31,6 +31,7 @@ app.controller('jump',['$scope','$location',function($scope,$location){
     };
 }]);
 app.controller('frontpage',['$scope','$timeout',function ($scope,$timeout) {
+  // 动态改变img尺寸
   var firstImg=$('#carousel-example-generic .item img:first-child');
   var resizeImgH=function () {
     var imgWidth=firstImg.css("width");
