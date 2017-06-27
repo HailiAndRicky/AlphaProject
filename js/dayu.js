@@ -37,7 +37,8 @@ app.controller('frontpage',['$scope','$timeout',function ($scope,$timeout) {
     var imgWidth=firstImg.css("width");
     $("#carousel-example-generic .item img").css("height",imgWidth);
   };
-  $timeout(resizeImgH,10);
+  // $timeout(resizeImgH,10);
+  window.onload=resizeImgH;
   $(window).resize(resizeImgH);
   // 循环轮播到上一个项目
   $scope.leftSlide=function(){
