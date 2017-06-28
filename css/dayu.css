@@ -81,7 +81,7 @@ a:hover{
         justify-content: space-between;
         font-family:'微软雅黑',Arial,sans-serif;
         font-size: 1em;
-        padding: 0 10px;
+        background-color: #fdfdfd;
     }
     #nav-header img{
         width: 160px;
@@ -91,19 +91,20 @@ a:hover{
         color: #fff;
     }
     #nav-header div.header-search{
-        color: #ddd;
         display: flex;
         align-items: center;
     }
+    #nav-header div.header-search span{
+        color: #999;
+    }
     #nav-header div.header-search input{
-        border-radius: 3px;
-        height: 50px;
+        height: 45px;
         color: #999;
         font-size: 1em;
         border: none;
         width: 250px;
         padding:10px;
-        background-color: rgba(54, 54, 54, 0.06);
+        background-color: #fdfdfd;
     }
     #nav-header div.header-search input:focus{
         outline: none;
@@ -116,8 +117,8 @@ a:hover{
     }
     #nav-header a{
         color: #333333;
-        padding-left:15px;
-        padding-right:15px;
+        padding-left:13px;
+        padding-right:13px;
         display: flex;
         align-items: center;
     }
@@ -256,9 +257,16 @@ banner>ul a:hover{
     transition-property: right,width,background-color;
     transition:.4s linear;
 }
-#listContainer{
-    margin: 0 10%;
-    border: none;
+@media screen and (min-width:1000px){
+    #listContainer{
+        margin: 0 10%;
+        border: none;
+    }
+}
+@media screen and (max-width:999px){
+    #listTab th:first-child,#listTab tr td:first-child{
+        display: none;
+    }
 }
 #listTab th:nth-child(2)~th,#listTab tr td:nth-child(2)~td{
     text-align: center;
