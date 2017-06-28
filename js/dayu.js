@@ -34,8 +34,8 @@ app.controller('jump',['$scope','$location',"$timeout",function($scope,$location
             $("#nav-header a:contains('首页')").addClass("active");
           }else if(AContext==="乐库"){
             $("#nav-header a:contains('乐库')").addClass("active");
-          }else if(AContext==="用户中心"){
-            $("#nav-header a:contains('用户中心')").addClass("active");
+          }else if(AContext==="用户"){
+            $("#nav-header a:contains('用户')").addClass("active");
           }
         },10);
     };
@@ -47,17 +47,18 @@ app.controller('frontpage',['$scope',function ($scope) {
   var resizeImgH=function () {
     var imgWidth=firstImg.css("width");
     $("#carousel-example-generic .item img").css("height",imgWidth);
+    $("#carousel-example-generic1 .item img").css("height",imgWidth);
   };
   // $timeout(resizeImgH,10);
   window.onload=resizeImgH;
   $(window).resize(resizeImgH);
   // 循环轮播到上一个项目
-  $scope.leftSlide=function(){
-    $("#carousel-example-generic").carousel('prev');
+  $scope.leftSlide=function(e){
+    $(e.target).parent().prev().carousel('prev');
   };
   // 循环轮播到下一个项目
-  $scope.rightSlide=function(){
-    $("#carousel-example-generic").carousel('next');
+  $scope.rightSlide=function(e){
+    $(e.target).parent().prev().carousel('next');
   };
 }]);
 app.controller('list',["$scope",function ($scope) {

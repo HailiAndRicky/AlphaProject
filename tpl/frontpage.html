@@ -22,7 +22,7 @@
          <a href="频道分类" name="频道">频道&nbsp &nbsp &nbsp &nbsp </a>
       </li>
    </ul>
-   <div  id="banner-bg" class="container">
+   <div  id="banner-bg" class="container containerC">
       <p><i></i><span>新歌首发</span><i></i></p>
 
       <ul>
@@ -104,17 +104,16 @@
       </div>
       <!--myControls-->
       <div id="Control-button" class="myControls">
-         <button ng-click="leftSlide()" class="btn btn-default left" type="button"><span class="fa fa-angle-left"></span></button>
-         <button ng-click="rightSlide()" class="btn btn-default right" type="button"><span class="fa fa-angle-right"></span></button>
+         <button ng-click="leftSlide($event)" class="btn btn-default left" type="button"><span class="fa fa-angle-left"></span></button>
+         <button ng-click="rightSlide($event)" class="btn btn-default right" type="button"><span class="fa fa-angle-right"></span></button>
       </div>
    </div>
 </banner>
 <main>
-   <div class="container">
-
+   <div class="container containerC">
       <p><i></i><span>精彩推荐</span><i></i></p>
       <a href="#">更多>></a>
-
+      <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
          <!-- Wrapper for slides -->
          <div class="carousel-inner" role="listbox">
             <div class="item active">
@@ -176,9 +175,10 @@
          </div>
       </div>
       <div class="myControls">
-         <button ng-click="leftSlide()" class="btn btn-default left" type="button"><span class="fa fa-angle-left"></span></button>
-         <button ng-click="rightSlide()" class="btn btn-default right" type="button"><span class="fa fa-angle-right"></span></button>
+         <button ng-click="leftSlide($event)" class="btn btn-default left" type="button"><span class="fa fa-angle-left"></span></button>
+         <button ng-click="rightSlide($event)" class="btn btn-default right" type="button"><span class="fa fa-angle-right"></span></button>
       </div>
+   </div>
       <p><i></i><span>热门单曲</span><i></i></p>
       <a href="#">更多>></a>
       <p><i></i><span>原创单曲</span><i></i></p>

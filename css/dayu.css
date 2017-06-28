@@ -3,10 +3,10 @@ body{
     color: rgba(0, 0, 0, 0.6);
     font:20px poppin,'PingFang SC',Tahoma,Arial;
 }
-body:hover #banner-bg .myControls button.left{
+body:hover .myControls button.left{
     left: 0;
 }
-body:hover #banner-bg .myControls button.right{
+body:hover .myControls button.right{
     right: 0;
 }
 a{
@@ -17,7 +17,7 @@ a:hover{
 }
     /*header的样式*/
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:1130px){
     #nav-header{
         display: flex;
         justify-content: space-between;
@@ -74,7 +74,7 @@ a:hover{
         margin-left: -1.8em;
     }
 }
-@media screen and (max-width:999px){
+@media screen and (max-width:1129px){
     #nav-header{
         display: flex;
         flex-wrap: wrap;
@@ -153,7 +153,7 @@ banner ul{
 banner>ul a:hover{
     color:#000000;
 }
-#banner-bg{
+.containerC{
     background-image: url(../img/bg_index_new.jpg);
     width:100%;
     height:735px;
@@ -164,18 +164,18 @@ banner>ul a:hover{
     position: relative;
     font-family: "张海山锐线体简","微软雅黑",Arial,sans-serif;
 }
-#banner-bg>p{
+.containerC>p{
     padding-top:80px;
     display: flex;
     align-items: center;
 }
-#banner-bg>p>i{
+.containerC>p>i{
     display: inline-block;
     width: 100px;
     height: 1px;
     background-color: rgba(255,255,255,0.3);
 }
-#banner-bg>p>span{
+.containerC>p>span{
     font-size: 2.3em;
     color: #fff;
     margin:0 80px;
@@ -193,25 +193,25 @@ banner>ul a:hover{
 #banner-bg>ul>li:hover{
     color: #fff;
 }
-#carousel-example-generic .item div{
+.containerC .carousel .item div{
     display: flex;
     justify-content: space-between;
 }
-#carousel-example-generic .item div img{
+.containerC .carousel .item div img{
     min-width:0;
     width: 25%;
     height: 300px;
 }
-#carousel-example-generic .item div img:hover{
+.containerC .carousel .item div img:hover{
     cursor: pointer;
 }
-#carousel-example-generic .item ul{
+.containerC .carousel .item ul{
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#carousel-example-generic .item ul li{
+.containerC .carousel .item ul li{
     width: 25%;
     height: 130px;
     background-color: rgba(0,0,0,0.7);
@@ -221,15 +221,15 @@ banner>ul a:hover{
     align-items: center;
     color: #fff;
 }
-#carousel-example-generic .item ul li:hover{
+.containerC .carousel .item ul li:hover{
     background-color: #8DA3BA;
 }
-#carousel-example-generic .item ul li span{
+.containerC .carousel .item ul li span{
     color: #ccc;
     font-size: 0.9em;
     padding-top:5px ;
 }
-#banner-bg .myControls button{
+.myControls button{
     position: absolute;
     width: 60px;
     height: 100px;
@@ -240,32 +240,74 @@ banner>ul a:hover{
     font-size: 1.5em;
     border-radius: 0;
 }
-#banner-bg .myControls button:hover{
+.myControls button:hover{
     background-color: #8DA3BA;
     width: 65px;
 }
-#banner-bg .myControls button:focus{
+.myControls button:focus{
     outline: none;
 }
-#banner-bg .myControls button.left{
+.myControls button.left{
     left: -60px;
     transition-property: left,width,background-color;
     transition:.3s linear;
 }
-#banner-bg .myControls button{
+.myControls button{
     right: -60px;
     transition-property: right,width,background-color;
     transition:.4s linear;
 }
-@media screen and (min-width:1000px){
+/*main的样式*/
+main>.containerC{
+    background-image: none!important;
+    height: auto;
+}
+
+main>.containerC>p>i {
+
+    background-color: rgba(108, 108, 108, 0.3);
+}
+main>.containerC>p>span{
+    font-size:2.3em;
+    color: #000;
+    margin:0 80px;
+}
+main>.containerC>a{
+
+    display: flex;
+    align-self: flex-end;
+}
+main>.containerC>.carousel{
+    height:520px;
+}
+main .carousel-indicators {
+    bottom: 20px;
+}
+main .carousel-indicators li{
+    background-color: #bfbfbf;
+}
+@media screen and (min-width:1130px){
     #listContainer{
         margin: 0 10%;
         border: none;
     }
+    #player{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+    }
 }
-@media screen and (max-width:999px){
+@media screen and (max-width:1129px){
     #listTab th:first-child,#listTab tr td:first-child{
         display: none;
+    }
+    #player{
+        position: relative;
+    }
+    #player audio{
+        position: absolute;
+        right: 0;
+        bottom: 0;
     }
 }
 #listTab th:nth-child(2)~th,#listTab tr td:nth-child(2)~td{
@@ -276,9 +318,6 @@ banner>ul a:hover{
 }
 #listTab tbody tr:nth-child(2n-1){
     background-color: #F5F5F5;
-}
-#player{
-    float: right;
 }
 /*login的样式*/
 .login-re{
