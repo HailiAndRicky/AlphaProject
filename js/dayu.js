@@ -19,7 +19,7 @@ app.config(['$routeProvider',function($routeProvider){
         })
         .when('/List',{
             templateUrl:'tpl/list.html',
-            controller:''
+            controller:'list'
         })
         .otherwise({
             redirectTo:'/Frontpage'
@@ -48,4 +48,32 @@ app.controller('frontpage',['$scope','$timeout',function ($scope,$timeout) {
   $scope.rightSlide=function(){
     $("#carousel-example-generic").carousel('next');
   };
+}]);
+app.controller('list',["$scope",function ($scope) {
+  $scope.list=[
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"}
+  ];
+  $("#listTab tbody").on("click",".play",function () {
+    var that=$(this);
+    var playS=that.parent().parent().parent().siblings().children().children().children(".fa-pause-circle-o");
+    var hasPause=playS.hasClass("fa-pause-circle-o");
+    if(hasPause){
+      playS.removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");
+    }
+    that.toggleClass("fa-play-circle-o").toggleClass("fa-pause-circle-o");
+  });
+  $("#listTab tbody").on("click",".like",function () {
+    var that=$(this);
+    that.toggleClass("fa-heart-o").toggleClass("fa-heart");
+  });
 }]);

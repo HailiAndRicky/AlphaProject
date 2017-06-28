@@ -16,9 +16,7 @@ a:hover{
     text-decoration: none;
 }
     /*header的样式*/
-    header{
-        border-bottom:1px solid rgba(0, 0, 0, 0.5);
-    }
+
 @media screen and (min-width:1000px){
     #nav-header{
         display: flex;
@@ -26,6 +24,7 @@ a:hover{
         font-family:'微软雅黑',Arial,sans-serif;
         font-size: 1.1em;
         padding: 0 5%;
+        background-color: #fdfdfd;
     }
     #nav-header img{
         width: 230px;
@@ -36,23 +35,22 @@ a:hover{
         color: #fff;
     }
     #nav-header div.header-search{
-        color: #ddd;
         display: flex;
         align-items: center;
     }
-    #nav-header div.header-search input{
-        border:1px solid #ddd;
-        border-radius: 3px;
-        height: 45px;
+    #nav-header div.header-search span{
         color: #999;
+    }
+    #nav-header div.header-search input{
+        border:1px solid #999;
+        border-radius: 3px;
+        height: 42px;
         font-size: 0.8em;
         width: 280px;
         padding:10px;
-        background-color: rgba(54, 54, 54, 0.06);
     }
     #nav-header div.header-search input:focus{
         outline: none;
-        background-color: #fff;
     }
     #nav-header div.users{
         display: flex;
@@ -70,7 +68,7 @@ a:hover{
         color: #235486;
     }
     #nav-header label{
-        margin-left: -1.4em;
+        margin-left: -1.8em;
     }
 }
 @media screen and (max-width:999px){
@@ -254,4 +252,20 @@ banner>ul a:hover{
     right: -60px;
     transition-property: right,width,background-color;
     transition:.4s linear;
+}
+#listContainer{
+    margin: 0 10%;
+    border: none;
+}
+#listTab th:nth-child(2)~th,#listTab tr td:nth-child(2)~td{
+    text-align: center;
+}
+#listTab th,#listTab td{
+    border: none;
+}
+#listTab tbody tr:nth-child(2n-1){
+    background-color: #F5F5F5;
+}
+#player{
+    float: right;
 }

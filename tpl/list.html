@@ -1,1 +1,40 @@
-<h1>歌曲列表</h1>
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div id="listContainer" class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        乐库
+        <audio id="player" src="songs/goodbyeplice.mp3" controls="controls"></audio>
+    </div>
+
+    <!-- Table -->
+    <table class="table" id="listTab">
+        <thead>
+            <tr>
+                <div class="row">
+                        <th class="col-md-1">序号</th>
+                        <th class="col-md-5">歌名</th>
+                        <th class="col-md-2">歌手</th>
+                        <th class="col-md-2">时长</th>
+                        <th class="col-md-1">播放</th>
+                        <th class="col-md-1">收藏</th>
+                </div>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr>-->
+                <!--<td colspan="4"></td>-->
+            <!--</tr>-->
+            <tr ng-repeat="tem in list">
+                <td>{{$index+1}}</td>
+                <td>{{tem.name}}</td>
+                <td>{{tem.singer}}</td>
+                <td>{{tem.time}}</td>
+                <td><a href="songs/goodbyeplice.mp3"><span class="fa fa-play-circle-o play"></span></a></td>
+                <td><span class="fa fa-heart-o like"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-include="'tpl/include/footer.html'"></div>
