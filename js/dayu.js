@@ -15,7 +15,7 @@ app.config(['$routeProvider',function($routeProvider){
         })
         .when('/Usercenter',{
             templateUrl:'tpl/usercenter.html',
-            controller:''
+            controller:'usercenter'
         })
         .when('/List',{
             templateUrl:'tpl/list.html',
@@ -25,12 +25,23 @@ app.config(['$routeProvider',function($routeProvider){
             redirectTo:'/Frontpage'
         });
 }]);
-app.controller('jump',['$scope','$location',function($scope,$location){
-    $scope.jump=function(resPath){
+app.controller('jump',['$scope','$location',"$timeout",function($scope,$location,$timeout){
+    $scope.jump=function(e,resPath){
         $location.path(resPath);
+        var AContext=e.target.textContent;
+        $timeout(function () {
+          if (AContext==="首页"){
+            $("#nav-header a:contains('首页')").addClass("active");
+          }else if(AContext==="乐库"){
+            $("#nav-header a:contains('乐库')").addClass("active");
+          }else if(AContext==="用户中心"){
+            $("#nav-header a:contains('用户中心')").addClass("active");
+          }
+        },10);
     };
 }]);
-app.controller('frontpage',['$scope','$timeout',function ($scope,$timeout) {
+app.controller('frontpage',['$scope',function ($scope) {
+  // console.log();
   // 动态改变img尺寸
   var firstImg=$('#carousel-example-generic .item img:first-child');
   var resizeImgH=function () {
@@ -76,4 +87,7 @@ app.controller('list',["$scope",function ($scope) {
     var that=$(this);
     that.toggleClass("fa-heart-o").toggleClass("fa-heart");
   });
+}]);
+app.controller("usercenter",["$scope",function () {
+
 }]);

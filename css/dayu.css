@@ -30,6 +30,9 @@ a:hover{
         width: 230px;
         margin: 15px 0;
     }
+    #nav-header a:hover{
+        cursor: pointer;
+    }
     #nav-header a.active,#nav-header a.active:hover{
         background-color: #8DA3BA;
         color: #fff;
