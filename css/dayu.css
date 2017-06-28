@@ -84,7 +84,7 @@ a:hover{
         background-color: #fdfdfd;
     }
     #nav-header img{
-        width: 160px;
+        width: 150px;
     }
     #nav-header a.active,#nav-header a.active:hover{
         background-color: #8DA3BA;
@@ -117,8 +117,8 @@ a:hover{
     }
     #nav-header a{
         color: #333333;
-        padding-left:13px;
-        padding-right:13px;
+        padding-left:10px;
+        padding-right:10px;
         display: flex;
         align-items: center;
     }
