@@ -272,3 +272,23 @@ banner>ul a:hover{
 #player{
     float: right;
 }
+/*login的样式*/
+.login-re{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin:40px;
+}
+.login-re>form{
+    height:427px;
+    background-color: #ddd;
+    padding: 40px;
+}
+.login-re>form>div>input{
+    padding:10px 146px;
+    border-radius: 0;
+}
+.login-re>form>div>div{
+    padding-bottom:20px;
+}
