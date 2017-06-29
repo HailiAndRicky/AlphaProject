@@ -15,7 +15,7 @@ a:hover{
     #nav-header{
         display: flex;
         justify-content: space-between;
-        font-family:'Microsoft YaHei UI Light',Arial,sans-serif;
+        font-family:'Microsoft YaHei UI Light','Microsoft JhengHei Light',Arial,sans-serif;
         font-size: 1.1em;
         padding: 0 5%;
         background-color: #fdfdfd;
