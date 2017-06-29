@@ -303,10 +303,10 @@ main .carousel-indicators li{
     #listTab th:first-child,#listTab tr td:first-child{
         display: none;
     }
-    #player{
+    #playerContainer{
         position: relative;
     }
-    #player audio{
+    #playerSpan{
         position: absolute;
         right: 0;
         bottom: 0;

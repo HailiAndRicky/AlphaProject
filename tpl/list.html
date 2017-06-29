@@ -2,7 +2,7 @@
 
 <div id="listContainer" class="panel panel-default">
     <!-- Default panel contents -->
-    <div id="player" class="panel-heading">乐库<audio src="songs/goodbyeplice.mp3" controls="controls"></audio>
+    <div id="playerContainer" class="panel-heading">乐库<span id="playerSpan"><audio id="player" src="songs/weareone.mp3" controls="controls"></audio></span>
     </div>
 
     <!-- Table -->
@@ -25,8 +25,8 @@
                 <td>{{tem.name}}</td>
                 <td>{{tem.singer}}</td>
                 <td>{{tem.time}}</td>
-                <td><a href="songs/goodbyeplice.mp3"><span class="fa fa-play-circle-o play"></span></a></td>
-                <td><span class="fa fa-heart-o like"></span></td>
+                <td><span ng-click="play($event,tem.src)" class="fa fa-play-circle-o play"></span></td>
+                <td><span ng-click="like($event,tem.name)" class="fa fa-heart-o like"></span></td>
             </tr>
         </tbody>
     </table>

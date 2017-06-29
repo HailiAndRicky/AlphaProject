@@ -70,35 +70,43 @@ app.controller('frontpage',['$scope',function ($scope) {
   $scope.rightSlide1=function(){
     carsouelB.carousel('next');
   };
-
 }]);
 app.controller('list',["$scope",function ($scope) {
   $scope.list=[
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"},
-    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50"}
+    {name:"风再起时",singer:"张国荣",time:"3:50",src:"songs/wind.mp3"},
+    {name:"再见警察",singer:"冯曦妤",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"We Are One",singer:"Kelly",time:"3:50",src:"songs/weareone.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"},
+    {name:"夕阳之歌",singer:"梅艳芳",time:"3:50",src:"songs/goodbyeplice.mp3"}
   ];
-  $("#listTab tbody").on("click",".play",function () {
-    var that=$(this);
-    var playS=that.parent().parent().parent().siblings().children().children().children(".fa-pause-circle-o");
-    var hasPause=playS.hasClass("fa-pause-circle-o");
-    if(hasPause){
-      playS.removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");
+  var playerSpan=document.getElementById("playerSpan");
+  $scope.play=function (e,src) {
+    var playSpan=$(e.target);
+    var otherSpan=playSpan.parent().parent().siblings().children().children(".fa-pause-circle-o");
+    var playing=playSpan.hasClass("fa-pause-circle-o");
+    if(otherSpan.length>0){
+      otherSpan.removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");
     }
-    that.toggleClass("fa-play-circle-o").toggleClass("fa-pause-circle-o");
-  });
-  $("#listTab tbody").on("click",".like",function () {
-    var that=$(this);
-    that.toggleClass("fa-heart-o").toggleClass("fa-heart");
-  });
+    playSpan.toggleClass("fa-play-circle-o").toggleClass("fa-pause-circle-o");
+    if(!playing){
+      playerSpan.innerHTML=`<audio id="player" src=${src} autoplay controls="controls"></audio>`;
+    }else {
+      var player=document.getElementById("player");
+      player.pause();
+    }
+    console.log(playerSpan);
+  };
+  $scope.like=function (e,name) {
+    var thisSpan=$(e.target);
+    thisSpan.toggleClass("fa-heart-o").toggleClass("fa-heart");
+    console.log(name);
+  };
 }]);
 app.controller("usercenter",["$scope",function () {
 
