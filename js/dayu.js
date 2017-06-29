@@ -44,22 +44,33 @@ app.controller('frontpage',['$scope',function ($scope) {
   // console.log();
   // 动态改变img尺寸
   var firstImg=$('#carousel-example-generic .item img:first-child');
+  var carsouelAimg=$("#carousel-example-generic .item img");
+  var carsouelBimg=$("#carousel-example-generic1 .item img");
   var resizeImgH=function () {
     var imgWidth=firstImg.css("width");
-    $("#carousel-example-generic .item img").css("height",imgWidth);
-    $("#carousel-example-generic1 .item img").css("height",imgWidth);
+    carsouelAimg.css("height",imgWidth);
+    carsouelBimg.css("height",imgWidth);
   };
   // $timeout(resizeImgH,10);
   window.onload=resizeImgH;
   $(window).resize(resizeImgH);
   // 循环轮播到上一个项目
-  $scope.leftSlide=function(e){
-    $(e.target).parent().prev().carousel('prev');
+  var carsouelA=$('#carousel-example-generic');
+  var carsouelB=$('#carousel-example-generic1');
+  $scope.leftSlide=function(){
+    carsouelA.carousel('prev');
+  };
+  $scope.leftSlide1=function(){
+    carsouelB.carousel('prev');
   };
   // 循环轮播到下一个项目
-  $scope.rightSlide=function(e){
-    $(e.target).parent().prev().carousel('next');
+  $scope.rightSlide=function(){
+    carsouelA.carousel('next');
   };
+  $scope.rightSlide1=function(){
+    carsouelB.carousel('next');
+  };
+
 }]);
 app.controller('list',["$scope",function ($scope) {
   $scope.list=[
