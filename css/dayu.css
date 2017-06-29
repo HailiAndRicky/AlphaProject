@@ -293,7 +293,7 @@ main .carousel-indicators li{
         margin: 0 10%;
         border: none;
     }
-    #player{
+    #playerContainer{
         display: flex;
         justify-content: space-between;
         border: none;
