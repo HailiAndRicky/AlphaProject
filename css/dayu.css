@@ -15,7 +15,7 @@ a:hover{
     #nav-header{
         display: flex;
         justify-content: space-between;
-        font-family:'Microsoft YaHei UI Light','Microsoft JhengHei Light',Arial,sans-serif;
+        font-family:'Microsoft YaHei UI Light','Microsoft JhengHei Light','Microsoft JhengHei',Arial,sans-serif;
         font-size: 1.1em;
         padding: 0 5%;
         background-color: #fdfdfd;
@@ -73,7 +73,7 @@ a:hover{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        font-family:'Microsoft YaHei UI Light',Arial,sans-serif;
+        font-family:'Microsoft YaHei UI Light','Microsoft JhengHei Light','Microsoft JhengHei',Arial,sans-serif;
         font-size: 1em;
         background-color: #fdfdfd;
     }
@@ -158,7 +158,7 @@ banner>ul a:hover{
     flex-direction: column;
     align-items: center;
     position: relative;
-    font-family: "Microsoft YaHei UI Light",Arial,sans-serif;
+    font-family: 'Microsoft YaHei UI Light','Microsoft JhengHei Light','Microsoft JhengHei',Arial,sans-serif;
 }
 .containerC>p{
     padding-top:80px;
@@ -260,16 +260,23 @@ body:hover .myControls button.right{
     right: 0;
 }
 /*main的样式*/
-main>.containerC>p>i {
+main>.titleContainer{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'Microsoft YaHei UI Light','Microsoft JhengHei Light','Microsoft JhengHei',Arial,sans-serif;
+}
+main>.titleContainer>p>i {
     background-color: rgba(108, 108, 108, 0.3);
 }
-main>.containerC>p>span{
+main>.titleContainer>p>span{
     font-size:2.3em;
     color: #000;
     margin:0 80px;
 }
-main>.containerC>a{
-    display: flex;
+main>.titleContainer>a{
     align-self: flex-end;
 }
 main>.containerC>.carousel{
